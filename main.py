@@ -8,15 +8,12 @@ from PyQt5.QtWidgets import (
     QHBoxLayout, QLineEdit, QPushButton, QFileDialog, QScrollArea
 )
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
-
-
 from dotenv import load_dotenv
 
-load_dotenv()  
+load_dotenv(override=True)
 
 TOKEN = os.getenv("DISCORD_TOKEN")
-CANAL_ID = os.getenv("CANAL_ID")
-
+CANAL_ID = int(os.getenv("CANAL_ID"))
 
 
 class DiscordBotThread(QThread):
